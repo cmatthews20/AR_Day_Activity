@@ -3,7 +3,7 @@ from src.DriveState import DriveState
 from src.Constants import DriveMove, SensorData
 
 
-class BfsSolverAgent(DriveInterface):
+class ColeKeeganUmamaAgent(DriveInterface):
 
     def __init__(self, game_id: int, is_advanced_mode: bool):
         # Constructor for player
