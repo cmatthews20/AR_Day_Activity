@@ -32,8 +32,10 @@ class BfsSolverAgent(DriveInterface):
         else:
             return next_move
 
-    def will_next_state_collide(self, state: DriveState, sensor_data: dict) -> bool:
-        # Not implemented yet
+    def will_next_state_collide(self, next_state: DriveState, sensor_data: dict) -> bool:
+        for drive_state in sensor_data[SensorData.DRIVE_LOCATIONS]:
+            if drive_state[0] == next_state.x and drive_state[1] == next_state.y:
+                return True
         return False
 
     def get_move_for_next_state_in_path(self) -> DriveMove:
